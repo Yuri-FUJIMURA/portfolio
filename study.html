@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Detail — Yuri FUJIMURA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #050505;
+      --bg-secondary: #0a0a0a;
+      --bg-card: #0f0f0f;
+      --text-primary: #f0f0f0;
+      --text-secondary: #a4a4a4;
+      --text-muted: #727171;
+      --accent: #ffffff;
+      --border: #1a1a1a;
+      --border-light: #2a2a2a;
+      --font-display: 'Instrument Serif', serif;
+      --font-body: 'Zen Kaku Gothic New', sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8; font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: var(--text-primary); text-decoration: none; transition: opacity 0.3s ease; }
+    a:hover { opacity: 0.6; }
+    ::selection { background: var(--text-primary); color: var(--bg-primary); }
+
+    .grain-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 9998; opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      padding: 24px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.0rem; font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+    .nav-back {
+      font-size: 0.8rem; font-weight: 400;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-secondary); position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-back:hover { color: var(--text-primary); opacity: 1; }
+    .nav-back::before { content: '←'; margin-right: 8px; }
+
+    /* Detail Content */
+    .detail-container {
+      max-width: 800px; margin: 0 auto;
+      padding: 140px 48px 80px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards 0.1s;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-category {
+      font-size: 0.72rem; color: var(--text-muted);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .detail-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400; letter-spacing: 0.02em;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .detail-venue {
+      font-size: 0.85rem; color: var(--text-muted);
+      letter-spacing: 0.06em; margin-bottom: 40px;
+    }
+    .detail-divider {
+      width: 100%; height: 1px; background: var(--border);
+      margin-bottom: 40px;
+    }
+
+    .detail-hero-image {
+      width: 100%; aspect-ratio: 16 / 10;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.12em;
+      margin-bottom: 48px; overflow: hidden;
+    }
+    .detail-hero-image img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .detail-description {
+      font-size: 0.95rem; color: var(--text-secondary);
+      line-height: 2; margin-bottom: 40px;
+    }
+    .detail-description p { margin-bottom: 18px; }
+
+    .detail-links {
+      display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 56px;
+    }
+    .detail-links a {
+      font-size: 0.8rem; color: var(--text-primary);
+      padding: 10px 24px;
+      border: 1px solid var(--border-light);
+      letter-spacing: 0.1em;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .detail-links a:hover {
+      border-color: var(--text-secondary);
+      background: rgba(255,255,255,0.03);
+      opacity: 1;
+    }
+
+    /* Image Gallery */
+    .detail-gallery { margin-bottom: 56px; }
+    .detail-gallery-item { margin-bottom: 32px; }
+    .detail-gallery-item .gallery-image {
+      width: 100%; aspect-ratio: 16 / 10;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.12em;
+      overflow: hidden;
+    }
+    .detail-gallery-item .gallery-image img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .detail-gallery-item .gallery-caption {
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-top: 10px; letter-spacing: 0.04em;
+    }
+
+    /* Detail Text Sections */
+    .detail-section { margin-bottom: 48px; }
+    .detail-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 400;
+      margin-bottom: 16px; letter-spacing: 0.02em;
+    }
+    .detail-section p {
+      font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 2; margin-bottom: 12px;
+    }
+
+    /* Prev / Next Navigation */
+    .work-nav {
+      border-top: 1px solid var(--border);
+      padding-top: 48px; margin-top: 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    }
+    .work-nav-item {
+      padding: 32px 28px;
+      background: var(--bg-card);
+      transition: background 0.3s ease;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .work-nav-item:hover { background: var(--bg-secondary); }
+    .work-nav-item a { display: block; color: inherit; text-decoration: none; }
+    .work-nav-item a:hover { opacity: 1; }
+    .work-nav-label {
+      font-size: 0.68rem; color: var(--text-muted);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .work-nav-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.3s ease;
+    }
+    .work-nav-item:hover .work-nav-title { color: var(--accent); }
+    .work-nav-item.next { text-align: right; }
+
+    .back-to-works {
+      text-align: center; margin-top: 48px; padding-bottom: 24px;
+    }
+    .back-to-works a {
+      font-size: 0.78rem; color: var(--text-muted);
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 8px 0; transition: color 0.3s ease;
+    }
+    .back-to-works a:hover { color: var(--text-primary); opacity: 1; }
+
+    footer {
+      text-align: center; padding: 48px;
+      border-top: 1px solid var(--border);
+      font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .detail-container { padding: 120px 24px 60px; }
+      .work-nav { grid-template-columns: 1fr; }
+      .work-nav-item.next { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain-overlay"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Yuri FUJIMURA</a>
+    <a href="index.html#study" class="nav-back">Study</a>
+  </nav>
+
+  <div class="detail-container" id="detailContainer">
+    <!-- Content populated by JS -->
+  </div>
+
+  <footer>&copy;2026 Yuri FUJIMURA</footer>
+
+  <script>
+    const studies = [
+      {
+        id: 0,
+        category: '先端芸術音楽創作学会',
+        title: 'Studies No.1 for Aleatoric Coded Voxels',
+        venue: 'JSSA 第61回研究会',
+        image: 'img/study/JSSA.jpg',
+        description: '',
+        links: [
+          { label: '創作ノート', url: 'https://data.jssa.info/paper/2026v18n01/61_4.Fujimura.pdf' }
+        ],
+        images: [],
+        sections: []
+      },
+      {
+        id: 1,
+        category: 'ADADA',
+        title: 'ADADA + CUMULUS 2025',
+        venue: 'ADADA + CUMULUS 2025',
+        image: 'img/works/ADADA.jpg',
+        description: '',
+        links: [
+           { label: '論文', url: 'https://doi.org/10.20668/adadapic.2025.0_CP0601' }
+        ],
+        images: [],
+        sections: []
+      },
+      {
+        id: 2,
+        category: 'AES',
+        title: '若手・学生のためのAESジャパンフォーラム',
+        venue: 'AES Japan Forum',
+        image: 'img/study/AESフォーラム.JPG',
+        description: '',
+        links: [],
+        images: [],
+        sections: []
+      },
+      {
+        id: 3,
+        category: 'SIGEC',
+        title: 'EC・ICEC 2025',
+        venue: 'EC・ICEC 2025',
+        image: 'img/study/EC・ICEC.jpg',
+        description: '',
+        links: [
+          { label: '予稿', url: 'https://ipsj.ixsq.nii.ac.jp/records/2003704' }
+        ],
+        images: [],
+        sections: []
+      }
+    ];
+
+    function getStudyId() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('id'), 10) || 0;
+    }
+
+    function renderStudy(id) {
+      const study = studies[id];
+      if (!study) { window.location.href = 'index.html#study'; return; }
+
+      document.title = study.title + ' — Yuri FUJIMURA';
+
+      let html = '';
+
+      // Hero image area
+      html += '<div class="detail-hero-image">';
+      if (study.image) {
+        html += '<img src="' + study.image + '" alt="' + study.title + '">';
+      } else {
+        html += study.venue;
+      }
+      html += '</div>';
+
+      // Category, Title, Venue
+      html += '<p class="detail-category">' + study.category + '</p>';
+      html += '<h1 class="detail-title">' + study.title + '</h1>';
+      html += '<p class="detail-venue">' + study.venue + '</p>';
+      html += '<div class="detail-divider"></div>';
+
+      // Description
+      if (study.description) {
+        html += '<div class="detail-description"><p>' + study.description + '</p></div>';
+      }
+
+      // Links
+      if (study.links.length > 0) {
+        html += '<div class="detail-links">';
+        study.links.forEach(function(link) {
+          html += '<a href="' + link.url + '" target="_blank" rel="noopener">' + link.label + '</a>';
+        });
+        html += '</div>';
+      }
+
+      // Gallery images
+      if (study.images.length > 0) {
+        html += '<div class="detail-gallery">';
+        study.images.forEach(function(img) {
+          html += '<div class="detail-gallery-item">';
+          html += '<div class="gallery-image">';
+          if (img.src) {
+            html += '<img src="' + img.src + '" alt="' + (img.caption || '') + '">';
+          } else {
+            html += img.caption || 'Image';
+          }
+          html += '</div>';
+          if (img.caption) {
+            html += '<p class="gallery-caption">' + img.caption + '</p>';
+          }
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // Additional text sections
+      if (study.sections.length > 0) {
+        study.sections.forEach(function(sec) {
+          html += '<div class="detail-section">';
+          if (sec.heading) html += '<h3>' + sec.heading + '</h3>';
+          if (sec.text) html += '<p>' + sec.text + '</p>';
+          html += '</div>';
+        });
+      }
+
+      // Prev / Next navigation
+      var prevId = id > 0 ? id - 1 : studies.length - 1;
+      var nextId = id < studies.length - 1 ? id + 1 : 0;
+      var prev = studies[prevId];
+      var next = studies[nextId];
+
+      html += '<div class="work-nav">';
+      html += '<div class="work-nav-item prev">';
+      html += '<a href="study.html?id=' + prevId + '">';
+      html += '<p class="work-nav-label">← Prev</p>';
+      html += '<p class="work-nav-title">' + prev.title + '</p>';
+      html += '</a></div>';
+      html += '<div class="work-nav-item next">';
+      html += '<a href="study.html?id=' + nextId + '">';
+      html += '<p class="work-nav-label">Next →</p>';
+      html += '<p class="work-nav-title">' + next.title + '</p>';
+      html += '</a></div>';
+      html += '</div>';
+
+      // Back to study
+      html += '<div class="back-to-works"><a href="index.html#study">← Back to All Studies</a></div>';
+
+      document.getElementById('detailContainer').innerHTML = html;
+    }
+
+    renderStudy(getStudyId());
+  </script>
+</body>
+</html>
