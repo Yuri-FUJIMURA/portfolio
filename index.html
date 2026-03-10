@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
@@ -15,7 +16,7 @@
       --bg-card: #0f0f0f;
       --text-primary: #f0f0f0;
       --text-secondary: #a4a4a4;
-      --text-muted: #727171;
+      --text-muted: #a1a1a1;
       --accent: #ffffff;
       --accent-dim: #999999;
       --border: #434343;
@@ -170,13 +171,11 @@
       opacity: 0; animation: fadeUp 1s ease forwards 1.4s;
     }
     .hero-links {
-      display: flex; gap: 40px; margin-top: 20px;
-      margin-left: -15px;
+      display: flex; gap: 32px; margin-top: 24px;
       opacity: 0; animation: fadeUp 1s ease forwards 1.8s;
     }
     .hero-links a {
-      color: var(--text-muted); font-size: 0.7rem;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted); font-size: 1.3rem;
       transition: color 0.3s ease;
     }
     .hero-links a:hover { color: var(--text-primary); opacity: 1; }
@@ -245,12 +244,14 @@
     .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
     .work-card {
       background: var(--bg-card); overflow: hidden; position: relative;
+      display: flex; flex-direction: column;
       opacity: 0; transform: translateY(40px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .work-card.visible { opacity: 1; transform: translateY(0); }
     .work-card a.work-card-link {
-      display: block; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
       transition: opacity 0.3s ease;
     }
     .work-card a.work-card-link:hover { opacity: 1; }
@@ -263,7 +264,7 @@
       background: linear-gradient(135deg, #0d0d0d 0%, #151515 100%);
     }
     .work-card:hover .work-thumbnail { transform: scale(1.08); filter: brightness(1.2); }
-    .work-info { padding: 20px 24px; }
+    .work-info { padding: 20px 24px; display: flex; flex-direction: column; }
     .work-info .work-category {
       font-size: 0.68rem; color: var(--text-muted);
       letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px;
@@ -275,7 +276,7 @@
     }
     .work-card:hover .work-info h3 { color: var(--accent); }
     .work-info p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
-    .work-info .work-tools { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; }
+    .work-tools { font-size: 0.68rem; color: var(--text-muted); margin-top: auto; padding: 12px 24px 20px; }
     .work-thumbnail-wrap img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
@@ -327,17 +328,10 @@
       margin-top: 20px; flex-wrap: wrap;
     }
     .contact-social a {
-      font-size: 0.78rem; color: var(--text-muted);
-      letter-spacing: 0.15em; text-transform: uppercase;
-      padding: 8px 0; position: relative; transition: color 0.3s ease;
+      font-size: 1.5rem; color: var(--text-muted);
+      padding: 8px 0; transition: color 0.3s ease;
     }
     .contact-social a:hover { color: var(--text-primary); opacity: 1; }
-    .contact-social a::after {
-      content: ''; position: absolute; bottom: 4px; left: 0;
-      width: 0%; height: 1px; background: var(--text-primary);
-      transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .contact-social a:hover::after { width: 100%; }
 
     footer {
       text-align: center; padding: 48px;
@@ -378,13 +372,13 @@
   <div class="grain-overlay"></div>
 
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">Yuri FUJIMURA</a>
+    <a href="/" class="nav-logo">Yuri FUJIMURA</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#hero" onclick="closeMenu()">Home</a></li>
-      <li><a href="#about" onclick="closeMenu()">About</a></li>
-      <li><a href="#works" onclick="closeMenu()">Works</a></li>
-      <li><a href="#study" onclick="closeMenu()">Study</a></li>
-      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/works">Works</a></li>
+      <li><a href="/study">Study</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -396,9 +390,9 @@
     <div class="hero-line"></div>
     <p class="hero-subtitle">Sound Designer</p>
     <div class="hero-links">
-      <a href="https://soundcloud.com/user-564015150" target="_blank" rel="noopener">SoundCloud</a>
-      <a href="https://x.com/yuri64956815" target="_blank" rel="noopener">X</a>
-      <a href="https://www.instagram.com/fuyu_1125" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://soundcloud.com/user-564015150" target="_blank" rel="noopener" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+      <a href="https://x.com/yuri64956815" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/fuyu_1125" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
     <div class="scroll-indicator">
       <span>Scroll</span>
@@ -417,8 +411,8 @@
           <p class="name-ja">藤村 勇里</p>
           <p class="name-en">Yuri FUJIMURA</p>
           <p>2002年 神奈川県生まれ。<br>東京工科大学メディア学部メディア学科4年。</p>
-          <p>オーディオエンジニアリング、サウンドデザインを専攻。<br>ゲームサウンドの作曲・効果音制作から、サウンドプログラミングとマルチチャンネルスピーカーを用いた立体音響作品まで幅広く手掛ける。</p>
-          <p>卒業研究ではPureData/Reaper/TouchDesignerを用いた映像と音響を同期させるインタラクティブシステムを開発。学会での発表も積極的に行なっている</p>
+          <p>オーディオエンジニアリング、サウンドデザインを専攻。<br>ゲームサウンドの作曲・効果音制作から、サウンドプログラミングとマルチチャンネルスピーカーを用いた立体音響作品の制作を行う。</p>
+          <p>卒業研究ではPureData/Reaper/TouchDesignerを用いた映像と音響を同期させるインタラクティブシステムを開発。学会での発表も積極的に行う。</p>
           <div class="about-tags">
             <span>Sound Design</span>
             <span>Spatial Audio</span>
@@ -438,41 +432,41 @@
       <div class="works-grid">
 
         <div class="work-card">
-          <a href="work.html?id=0" class="work-card-link">
+          <a href="works.html?id=0" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/ICSAF.JPG" alt="ICSAF 2025">
             </div>
             <div class="work-info">
               <p class="work-category">Spatial Audio / Sound Programming</p>
               <h3>Studies No.1 for Aleatoric Coded Voxels</h3>
-              <p>7.1.4ch立体電子音響作品。空間を一つのモノラル音場として捉え、単発音による定位感と持続音による包まれ感の両立を試みた。</p>
-              <p class="work-tools">SuperCollider / Csound / Logic Pro / Dolby Atmos / Virtuoso</p>
+              <p>7.1.4ch立体電子音響作品。マルチチャンネルスピーカーの特性に着目し、空間を一つのモノラル音場として捉え、単発音による定位感と持続音による包まれ感の両立を試みた。</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://on.soundcloud.com/bMp8KIsTQWyeq9Cm3h" target="_blank" rel="noopener">SoundCloud</a>
           </div>
+          <p class="work-tools">SuperCollider / Csound / Logic Pro / Dolby Atmos / Virtuoso</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=1" class="work-card-link">
+          <a href="works.html?id=1" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/TechDsignCamp.jpg" alt="Tech Design Camp 2025">
             </div>
             <div class="work-info">
               <p class="work-category">Sound Design / Sound System</p>
               <h3>わさわさ</h3>
-              <p>TBS Tech Design Lab主催ハッカソン。12ch立体音響サウンドのBGM、効果音、サウンドシステムの構築を担当。</p>
-              <p class="work-tools">SuperCollider / Logic Pro / TouchDesigner</p>
+              <p>TBS Tech Design Lab主催ハッカソンにて、インタラクティブゲームの制作を行った。12chマルチチャンネルスピーカーを用いたサウンドシステムの構築、BGM・効果音制作を担当。</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://youtu.be/4BvsFNxWgEI" target="_blank" rel="noopener">YouTube</a>
           </div>
+          <p class="work-tools">SuperCollider / Logic Pro / TouchDesigner</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=2" class="work-card-link">
+          <a href="works.html?id=2" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/VoiceRecording.JPEG" alt="TGS 2025">
             </div>
@@ -480,33 +474,33 @@
               <p class="work-category">Voice Recording</p>
               <h3>ハヤツバサ</h3>
               <p>ゲーム内ボイスの録音・編集を担当。</p>
-              <p class="work-tools">ProTools / Logic Pro</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://mkmlab.net/TGS/2025/team/team01/team01M6.html" target="_blank" rel="noopener">ハヤツバサ</a>
           </div>
+          <p class="work-tools">ProTools / Logic Pro</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=3" class="work-card-link">
+          <a href="works.html?id=3" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/OTOTEN.JPG" alt="OTOTEN 2025">
             </div>
             <div class="work-info">
               <p class="work-category">Spatial Audio / Sound Programming</p>
               <h3>CodedSoundScapes</h3>
-              <p>7.1.4ch立体電子音響作品。</p>
-              <p class="work-tools">SuperCollider / Logic Pro / Dolby Atmos / Virtuoso</p>
+              <p>サウンドプログラミングを用いた7.1.4ch立体電子音響作品。</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://on.soundcloud.com/CKvoSLLLGVJKUgjDMS" target="_blank" rel="noopener">SoundCloud</a>
           </div>
+          <p class="work-tools">SuperCollider / Logic Pro / Dolby Atmos / Virtuoso</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=4" class="work-card-link">
+          <a href="works.html?id=4" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/GGJ2025.jpg" alt="GGJ 2025">
             </div>
@@ -514,7 +508,6 @@
               <p class="work-category">Music / Direction</p>
               <h3>GGJ TUT 2025</h3>
               <p>配信BGM、OP・ED映像を制作。</p>
-              <p class="work-tools">Logic Pro / DaVinci Resolve</p>
             </div>
           </a>
           <div class="work-card-links">
@@ -523,10 +516,11 @@
             <a href="https://soundcloud.com/user-564015150/ggjtut2025_bgm02" target="_blank" rel="noopener">BGM02</a>
             <a href="https://soundcloud.com/user-564015150/ggjtut2025_op" target="_blank" rel="noopener">OP</a>
           </div>
+          <p class="work-tools">Logic Pro / DaVinci Resolve</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=5" class="work-card-link">
+          <a href="works.html?id=5" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/Genereviver.jpg" alt="Genereviver">
             </div>
@@ -534,7 +528,6 @@
               <p class="work-category">Game Sound</p>
               <h3>Genereviver</h3>
               <p>ゲームBGMの制作。</p>
-              <p class="work-tools">Logic Pro</p>
             </div>
           </a>
           <div class="work-card-links">
@@ -542,12 +535,13 @@
             <a href="https://on.soundcloud.com/Ysm291hvmrYJ1yuLrh" target="_blank" rel="noopener">BGM_StageSelected</a>
             <a href="https://on.soundcloud.com/u8l9oROM7WgsQKSbDr" target="_blank" rel="noopener">BGM_Title</a>
             <a href="https://on.soundcloud.com/wvOcsfJINu3Dk8i3RU" target="_blank" rel="noopener">BGM_StageClear</a>
-            <a href="https://on.soundcloud.com/qlkK3AJk77CG4tT48u" target="_blank" rel="noopener">BGM_Stage1_mystery </a>
+            <a href="https://on.soundcloud.com/qlkK3AJk77CG4tT48u" target="_blank" rel="noopener">BGM_Stage1_mystery</a>
           </div>
+          <p class="work-tools">Logic Pro</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=6" class="work-card-link">
+          <a href="works.html?id=6" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/Alice'sRegain.JPEG" alt="Alice's Regain">
             </div>
@@ -555,17 +549,17 @@
               <p class="work-category">Game Sound</p>
               <h3>Alice's Regain</h3>
               <p>ゲームBGMの制作。</p>
-              <p class="work-tools">Logic Pro</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://mkmlab.net/TGS/2024/game/alicesregain.html" target="_blank" rel="noopener">Alice's Regain</a>
             <a href="https://on.soundcloud.com/rFu9DNjnQj9hfO5DzY" target="_blank" rel="noopener">BGM_FinalBoss_MonsterBird</a>
           </div>
+          <p class="work-tools">Logic Pro</p>
         </div>
 
         <div class="work-card">
-          <a href="work.html?id=7" class="work-card-link">
+          <a href="works.html?id=7" class="work-card-link">
             <div class="work-thumbnail-wrap">
               <img src="img/works/hanadayori.jpeg" alt="はなだより">
             </div>
@@ -573,12 +567,12 @@
               <p class="work-category">MA</p>
               <h3>はなだより</h3>
               <p>PVのMAを担当。</p>
-              <p class="work-tools">ProTools</p>
             </div>
           </a>
           <div class="work-card-links">
             <a href="https://youtu.be/o5OIbKmCJdo" target="_blank" rel="noopener">PV</a>
           </div>
+          <p class="work-tools">ProTools</p>
         </div>
 
       </div>
@@ -600,7 +594,7 @@
             <div class="work-info">
               <p class="work-category">先端芸術音楽創作学会</p>
               <h3>Studies No.1 for Aleatoric Coded Voxels</h3>
-              <p>JSSA 第61回研究会にて、7.1.4ch立体音響作品の創作ノートを執筆、プレゼン発表を行なった。</p>
+              <p>JSSA 第61回研究会にて、7.1.4ch立体音響作品の創作ノートを執筆、プレゼン発表を行った。</p>
             </div>
           </a>
           <div class="work-card-links">
@@ -616,7 +610,7 @@
             <div class="work-info">
               <p class="work-category">ADADA + CUMULUS 2025</p>
               <h3>ADADA + CUMULUS 2025</h3>
-              <p>RepaerとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、論文執筆、ポスター発表を行なった。</p>
+              <p>ReaperとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、論文執筆、ポスター発表を行った。</p>
             </div>
           </a>
           <div class="work-card-links">
@@ -632,7 +626,7 @@
             <div class="work-info">
               <p class="work-category">AES</p>
               <h3>若手・学生のためのAESジャパンフォーラム2025</h3>
-              <p>RepaerとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、ポスター発表を行なった。</p>
+              <p>ReaperとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、ポスター発表を行った。</p>
             </div>
           </a>
         </div>
@@ -645,7 +639,7 @@
             <div class="work-info">
               <p class="work-category">SIGEC</p>
               <h3>EC・ICEC 2025</h3>
-              <p>RepaerとTouchDesignerを用いて、音と映像が同期して切り替わるシステムを制作し、予稿執筆、ポスター発表を行なった。</p>
+              <p>ReaperとTouchDesignerを用いて、音と映像が同期して切り替わるシステムを制作し、予稿執筆、ポスター発表を行った。</p>
             </div>
           </a>
           <div class="work-card-links">
@@ -664,24 +658,60 @@
       <div class="contact-content">
         <a href="mailto:ffujimura255@gmail.com" class="contact-email">ffujimura255@gmail.com</a>
         <div class="contact-social">
-          <a href="https://soundcloud.com/user-564015150" target="_blank">SoundCloud</a>
-          <a href="https://x.com/yuri64956815" target="_blank">X</a>
-          <a href="https://www.instagram.com/fuyu_1125" target="_blank">Instagram</a>
+          <a href="https://soundcloud.com/user-564015150" target="_blank" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+          <a href="https://x.com/yuri64956815" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/fuyu_1125" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>&copy;2026 Yuri FUJIMURA</footer>
+  <footer>&copy;2026 Yuri FUJIMURA &nbsp;|&nbsp; Last updated: 2026.03</footer>
 
   <script>
-    // ハッシュ付き遷移時は即ジャンプ（スムーススクロールをスキップ）
-    if (window.location.hash) {
+    // パスベースのルーティング
+    const pathToSection = { '/about': 'about', '/works': 'works', '/study': 'study', '/contact': 'contact' };
+
+    // ページロード時：URLパスに応じて該当セクションへ即スクロール
+    const initSection = pathToSection[window.location.pathname];
+    if (initSection) {
       document.documentElement.style.scrollBehavior = 'auto';
-      setTimeout(function() {
-        document.documentElement.style.scrollBehavior = '';
-      }, 100);
+      window.addEventListener('load', function() {
+        const el = document.getElementById(initSection);
+        if (el) el.scrollIntoView();
+        setTimeout(function() { document.documentElement.style.scrollBehavior = ''; }, 50);
+      });
     }
+
+    // ナビクリックをSPA的に処理（ページ遷移せず滑らかスクロール＋URL更新）
+    document.querySelectorAll('a.nav-logo, .nav-links a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href.startsWith('http')) return;
+        e.preventDefault();
+        const sectionId = href === '/' ? 'hero' : pathToSection[href];
+        if (sectionId) {
+          history.pushState(null, '', href);
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        closeMenu();
+      });
+    });
+
+    // スクロールに合わせてURLを更新
+    const sectionUrls = { hero: '/', about: '/about', works: '/works', study: '/study', contact: '/contact' };
+    const urlObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          history.replaceState(null, '', sectionUrls[entry.target.id] || '/');
+        }
+      });
+    }, { threshold: 0.3 });
+    ['hero', 'about', 'works', 'study', 'contact'].forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) urlObs.observe(el);
+    });
 
     // Hero text split animation
     const heroName = document.getElementById('heroName');
