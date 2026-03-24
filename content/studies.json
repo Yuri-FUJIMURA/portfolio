@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "category": "先端芸術音楽創作学会",
+    "title": "Studies No.1 for Aleatoric Coded Voxels",
+    "cardDescription": "JSSA 第61回研究会にて、7.1.4ch立体音響作品の創作ノートを執筆、プレゼン発表を行った。",
+    "detailDescription": "",
+    "venue": "JSSA 第61回研究会",
+    "image": "img/study/JSSA.jpg",
+    "links": [
+      { "label": "創作ノート", "url": "https://data.jssa.info/paper/2026v18n01/61_4.Fujimura.pdf" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 1,
+    "category": "ADADA + CUMULUS 2025",
+    "title": "ADADA + CUMULUS 2025",
+    "cardDescription": "ReaperとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、論文執筆、ポスター発表を行った。",
+    "detailDescription": "",
+    "venue": "ADADA + CUMULUS 2025",
+    "image": "img/works/ADADA.jpg",
+    "links": [
+      { "label": "論文", "url": "https://doi.org/10.20668/adadapic.2025.0_CP0601" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 2,
+    "category": "AES",
+    "title": "若手・学生のためのAESジャパンフォーラム2025",
+    "cardDescription": "ReaperとTouchDesigner、PureDataを用いて、音と映像が同期して切り替わるシステムを制作し、ポスター発表を行った。",
+    "detailDescription": "",
+    "venue": "AES Japan Forum",
+    "image": "img/study/AESフォーラム.JPG",
+    "links": [],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 3,
+    "category": "SIGEC",
+    "title": "EC・ICEC 2025",
+    "cardDescription": "ReaperとTouchDesignerを用いて、音と映像が同期して切り替わるシステムを制作し、予稿執筆、ポスター発表を行った。",
+    "detailDescription": "",
+    "venue": "EC・ICEC 2025",
+    "image": "img/study/EC・ICEC.jpg",
+    "links": [
+      { "label": "予稿", "url": "https://ipsj.ixsq.nii.ac.jp/records/2003704" }
+    ],
+    "images": [],
+    "sections": []
+  }
+]

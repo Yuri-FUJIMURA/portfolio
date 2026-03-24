@@ -1,0 +1,122 @@
+    [
+  {
+    "id": 0,
+    "category": "Spatial Audio / Sound Programming",
+    "title": "Studies No.1 for Aleatoric Coded Voxels",
+    "cardDescription": "7.1.4ch立体電子音響作品。マルチチャンネルスピーカーの特性に着目し、空間を一つのモノラル音場として捉え、単発音による定位感と持続音による包まれ感の両立を試みた。",
+    "detailDescription": "マルチチャンネルスピーカー音響の特徴を定位感と包まれ感に見出し、日常の音空間と重ね合わせた。サウンドプログミングによる音響合成で日常の音、とりわけ自然音を再現した。ステレオスピーカーからマルチチャンネルスピーカーへ、「音を眺める状態」から「音の中にいる状態」へ鑑賞者を導く。空間を一つのモノラル音場として捉え、単発音による定位感と持続音による包まれ感の両立を試みた。サウンドプログラミングで生成された音素材をDolby Atmosの空間上に配置。シンプルなオシレータ、物理モジュールのオシレータ、ハイドロフォンによる録音素材を使用し、異なる質感・遠近・残響を空間全体で表現した。ハイトスピーカーとサラウンドスピーカーにて周波数特性を制限することで、定位知覚特性を考慮した音響配置を行った。SoundCloudにてBinaural ver.をお聞きいただけます。",
+    "tools": "SuperCollider / Csound / Logic Pro / Dolby Atmos / Virtuoso",
+    "image": "img/works/ICSAF.JPG",
+    "links": [
+      { "label": "SoundCloud", "url": "https://on.soundcloud.com/bMp8KIsTQWyeq9Cm3h" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 1,
+    "category": "Sound Design / Sound System",
+    "title": "わさわさ",
+    "cardDescription": "TBS Tech Design Lab主催ハッカソンにて、インタラクティブゲームの制作を行った。12chマルチチャンネルスピーカーを用いたサウンドシステムの構築、BGM・効果音制作を担当。",
+    "detailDescription": "TBS Tech Design Lab主催ハッカソンにて制作。12ch立体音響サウンドを構築し、インスタレーション空間に没入感のある音響体験を実現した。",
+    "tools": "SuperCollider / Logic Pro / TouchDesigner",
+    "image": "img/works/TechDsignCamp.jpg",
+    "links": [
+      { "label": "YouTube", "url": "https://youtu.be/4BvsFNxWgEI" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 2,
+    "category": "Voice Recording",
+    "title": "ハヤツバサ",
+    "cardDescription": "ゲーム内ボイスの録音・編集を担当。",
+    "detailDescription": "TGS2025出展ゲームのボイス録音・編集を担当。キャラクターのセリフを収録し、ゲームに実装するための編集作業を行った。",
+    "tools": "ProTools / Logic Pro",
+    "image": "img/works/VoiceRecording.JPEG",
+    "links": [
+      { "label": "ハヤツバサ", "url": "https://mkmlab.net/TGS/2025/team/team01/team01M6.html" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 3,
+    "category": "Spatial Audio / Sound Programming",
+    "title": "CodedSoundScapes",
+    "cardDescription": "サウンドプログラミングを用いた7.1.4ch立体電子音響作品。単発音と持続音の両立、ハード音像とファントム音像に着目して制作を行った。",
+    "detailDescription": "サウンドプログラミングによる電子音響でサウンドスケープ表現を目指した7.1.4ch作品。SuperColliderで生成したサウンドをDolby Atmosで空間配置し、自然環境のサウンドスケープを電子音響で再構築した。",
+    "tools": "SuperCollider / Logic Pro / Dolby Atmos / Virtuoso",
+    "image": "img/works/OTOTEN.JPG",
+    "links": [
+      { "label": "SoundCloud", "url": "https://on.soundcloud.com/CKvoSLLLGVJKUgjDMS" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 4,
+    "category": "Music / Direction",
+    "title": "GGJ TUT 2025",
+    "cardDescription": "Creative Director、制作進行、選曲を担当。<br>配信BGM、OP・ED映像を制作。",
+    "detailDescription": "配信チームとして制作進行、Creative Directorを務めた。配信BGM・映像も制作し、イベント全体のクリエイティブを統括した。",
+    "tools": "Logic Pro / DaVinci Resolve",
+    "image": "img/works/GGJ2025.jpg",
+    "links": [
+      { "label": "配信アーカイブ", "url": "https://youtube.com/playlist?list=PL04S5xonQiDm2Yc9NbnD7fElksl0YGM91" },
+      { "label": "BGM01", "url": "https://soundcloud.com/user-564015150/ggjtut2025_bgm01" },
+      { "label": "BGM02", "url": "https://soundcloud.com/user-564015150/ggjtut2025_bgm02" },
+      { "label": "OP", "url": "https://soundcloud.com/user-564015150/ggjtut2025_op" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 5,
+    "category": "Game Sound",
+    "title": "Genereviver",
+    "cardDescription": "ゲーム内BGMを制作。",
+    "detailDescription": "TGS2024出展ゲームのBGMを制作。ゲームの世界観に合わせた楽曲を複数制作し、プレイヤーの没入感を高めるサウンドデザインを行った。",
+    "tools": "Logic Pro",
+    "image": "img/works/Genereviver.jpg",
+    "links": [
+      { "label": "Genereviver", "url": "https://mkmlab.net/TGS/2024/game/genereviver.html" },
+      { "label": "BGM_StageSelected", "url": "https://on.soundcloud.com/Ysm291hvmrYJ1yuLrh" },
+      { "label": "BGM_Title", "url": "https://on.soundcloud.com/u8l9oROM7WgsQKSbDr" },
+      { "label": "BGM_StageClear", "url": "https://on.soundcloud.com/wvOcsfJINu3Dk8i3RU" },
+      { "label": "BGM_Stage1_mystery", "url": "https://on.soundcloud.com/qlkK3AJk77CG4tT48u" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 6,
+    "category": "Game Sound",
+    "title": "Alice's Regain",
+    "cardDescription": "ゲームBGMの制作。",
+    "detailDescription": "TGS2024出展ゲームのBGMを制作。ゲームの世界観に合わせた楽曲制作を担当した。",
+    "tools": "Logic Pro",
+    "image": "img/works/Alice'sRegain.JPEG",
+    "links": [
+      { "label": "Alice's Regain", "url": "https://mkmlab.net/TGS/2024/game/alicesregain.html" },
+      { "label": "BGM_FinalBoss_MonsterBird", "url": "https://on.soundcloud.com/rFu9DNjnQj9hfO5DzY" }
+    ],
+    "images": [],
+    "sections": []
+  },
+  {
+    "id": 7,
+    "category": "MA",
+    "title": "はなだより",
+    "cardDescription": "PVのMAを担当。",
+    "detailDescription": "TGS2024出展ゲームのPVにてMAを担当。映像に合わせた音響ミキシングを行った。",
+    "tools": "ProTools",
+    "image": "img/works/hanadayori.jpeg",
+    "links": [
+      { "label": "PV", "url": "https://youtu.be/o5OIbKmCJdo" }
+    ],
+    "images": [],
+    "sections": []
+  }
+]

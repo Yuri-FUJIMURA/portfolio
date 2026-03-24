@@ -1,0 +1,20 @@
+{
+  "nameJa": "藤村 勇里",
+  "nameEn": "Yuri FUJIMURA",
+  "photo": "img/Photo.JPG",
+  "subtitle": "Sound Designer",
+  "email": "ffujimura255@gmail.com",
+  "bio": [
+    "2002年 神奈川県生まれ。<br>東京工科大学メディア学部メディア学科4年。",
+    "オーディオエンジニアリング、サウンドデザインを専攻。<br>ゲームサウンドの作曲・効果音制作から、サウンドプログラミングとマルチチャンネルスピーカーを用いた立体音響作品の制作を行う。",
+    "卒業研究ではPureData/Reaper/TouchDesignerを用いた映像と音響を同期させるインタラクティブシステムを開発。学会での発表も積極的に行う。"
+  ],
+  "tags": ["Sound Design", "Spatial Audio", "Sound Programming"],
+  "societies": "参加学会：AES / SIGEC / SIGMUS / ADADA / JSSA",
+  "social": [
+    { "label": "SoundCloud", "url": "https://soundcloud.com/user-564015150", "icon": "fa-brands fa-soundcloud" },
+    { "label": "X", "url": "https://x.com/yuri64956815", "icon": "fa-brands fa-x-twitter" },
+    { "label": "Instagram", "url": "https://www.instagram.com/fuyu_1125", "icon": "fa-brands fa-instagram" },
+    { "label": "note", "url": "https://note.com/fuyu574", "icon": "fa-solid fa-n" }
+  ]
+}
