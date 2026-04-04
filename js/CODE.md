@@ -4,7 +4,7 @@
 
 | ファイル | 読み込み元 | 役割 |
 |---|---|---|
-| `main.js` | index.html | ルーティング、アニメーション、カード動的生成 |
+| `main.js`  | index.html | ルーティング、アニメーション、カード動的生成 |
 | `works.js` | works.html | Work 詳細ページの描画 |
 | `study.js` | study.html | Study 詳細ページの描画 |
 

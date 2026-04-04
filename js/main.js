@@ -111,6 +111,30 @@ function closeMenu() {
   }
 }
 
+// --- Profile を動的生成 ---
+function renderProfile(profile) {
+  var el = document.getElementById('aboutContent');
+  if (!el) return;
+
+  var html = '<div class="about-photo"><img src="' + profile.photo + '" alt="' + profile.nameEn + '"></div>';
+  html += '<div class="about-text">';
+  html += '<p class="name-ja">' + profile.nameJa + '</p>';
+  html += '<p class="name-en">' + profile.nameEn + '</p>';
+  profile.bio.forEach(function(p) {
+    html += '<p>' + p + '</p>';
+  });
+  html += '<div class="about-tags">';
+  profile.tags.forEach(function(tag) {
+    html += '<span>' + tag + '</span>';
+  });
+  html += '</div>';
+  html += '<div class="about-societies">' + profile.societies + '</div>';
+  html += '</div>';
+
+  el.innerHTML = html;
+  createObserver('.about-content');
+}
+
 // --- JSON からカードを動的生成 ---
 function renderWorkCards(data, gridSelector, detailPage) {
   var grid = document.querySelector(gridSelector);
@@ -147,9 +171,11 @@ function renderWorkCards(data, gridSelector, detailPage) {
 
 // --- データ読み込み・レンダリング ---
 Promise.all([
+  fetch('content/profile.json').then(function(r) { return r.json(); }),
   fetch('content/works.json').then(function(r) { return r.json(); }),
   fetch('content/studies.json').then(function(r) { return r.json(); })
 ]).then(function(results) {
-  renderWorkCards(results[0], '#works .works-grid', 'works.html');
-  renderWorkCards(results[1], '#study .works-grid', 'study.html');
+  renderProfile(results[0]);
+  renderWorkCards(results[1], '#works .works-grid', 'works.html');
+  renderWorkCards(results[2], '#study .works-grid', 'study.html');
 });
